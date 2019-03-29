@@ -1,5 +1,6 @@
+================================
 matlab-matlab与mysql连接与操作
-
+================================
 Navicat Premium 12，数据库开发管理工具，支持连接 MySQL、Oracle等多种数据库（感谢wzy同学的推荐）
 https://www.jianshu.com/p/42a33b0dda9c
 
@@ -19,15 +20,19 @@ https://blog.csdn.net/eddy23513/article/details/81205476
 MySQL基础操作
 https://blog.csdn.net/qq_27648991/article/details/80412395
 
-
-我的数据库部分：
+将MATLAB数据导入Mysql
+http://blog.sina.com.cn/s/blog_6c843f980102vin9.html
+MATLAB元胞数组
+https://blog.csdn.net/thebigdong/article/details/54586610
+================================
+========我的数据库部分========
 //cmd登录
 mysql -uroot -p
 root
 //创建数据库
 create database app4circuit;
 use app4circuit;
-//创建表
+//创建初始化表
 CREATE TABLE`init_tbl`(
    `init_R` INT,
    `init_C` INT,
@@ -40,7 +45,16 @@ CREATE TABLE`init_tbl`(
 INSERT INTO init_tbl ( init_R, init_C, init_uc, init_um, init_w, submission_date)
 VALUES( 2000, 500, 40000, 10000, 2000, '2019-03-29');
 
-我的matlab代码部分：
+//创建存储表
+CREATE TABLE`data_tbl`(
+   `data_t` FLOAT,
+   `data_uc` FLOAT,
+   `data_uctr` FLOAT,
+   `data_ucst` FLOAT
+)DEFAULT CHARSET 'UTF8';
+
+================================
+========我的matlab代码部分========
 %数据库连接测试，依次为：数据库名，用户，密码，'com.mysql.jdbc.Driver’为驱动
 dbname = 'app4circuit';
 username = 'root';
@@ -56,3 +70,9 @@ data = curs.Data
 id = data(1,3)
 %把元胞转化为矩阵
 ress = cell2mat(id)
+
+%数据上传
+FIELDNAMES={'data_t','data_uc','data_uctr','data_ucst'};%表tickdata的变量
+%newdata=[{123,456,789,12};{111,222,333,444}];%需要插入的新数据
+newdata=real_data;%元胞
+fastinsert(conn, 'data_tbl', FIELDNAMES, newdata);%导入到SQL
