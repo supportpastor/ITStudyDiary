@@ -1,0 +1,14 @@
+matlab-matlab与mysql连接与操作
+
+Navicat Premium 12，数据库开发管理工具，支持连接 MySQL、Oracle等多种数据库（感谢wzy同学的推荐）
+https://www.jianshu.com/p/42a33b0dda9c
+
+往maltab的toolbox里加MySQL驱动文件
+https://blog.csdn.net/weixin_41831619/article/details/79914307
+
+maltab中用命令行连接数据库代码
+https://www.cnblogs.com/hEllOwOrlD2017/p/6936830.html
+常用的SQL语句
+https://blog.csdn.net/Sebastien23/article/details/74502863
+直接在代码里面写
+https://blog.csdn.net/vinegar93/article/details/53928326
