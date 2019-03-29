@@ -18,3 +18,27 @@ https://blog.csdn.net/eddy23513/article/details/81205476
 
 MySQL基础操作
 https://blog.csdn.net/qq_27648991/article/details/80412395
+
+
+
+
+我的：
+//cmd登录
+mysql -uroot -p
+root
+//创建数据库
+create database app4circuit;
+use app4circuit;
+//创建表
+CREATE TABLE`init_tbl`(
+   `init_R` INT,
+   `init_C` INT,
+   `init_uc` INT,
+   `init_um` INT,
+   `init_w` INT,
+   `submission_date` DATE
+)DEFAULT CHARSET 'UTF8';
+//插入初始值
+INSERT INTO init_tbl ( init_R, init_C, init_uc, init_um, init_w, submission_date)
+VALUES( 2000, 500, 40000, 10000, 2000, '2019-03-29');
+
