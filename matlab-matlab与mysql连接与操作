@@ -20,9 +20,7 @@ MySQL基础操作
 https://blog.csdn.net/qq_27648991/article/details/80412395
 
 
-
-
-我的：
+我的数据库部分：
 //cmd登录
 mysql -uroot -p
 root
@@ -42,3 +40,19 @@ CREATE TABLE`init_tbl`(
 INSERT INTO init_tbl ( init_R, init_C, init_uc, init_um, init_w, submission_date)
 VALUES( 2000, 500, 40000, 10000, 2000, '2019-03-29');
 
+我的matlab代码部分：
+%数据库连接测试，依次为：数据库名，用户，密码，'com.mysql.jdbc.Driver’为驱动
+dbname = 'app4circuit';
+username = 'root';
+password = 'root';
+driver = 'com.mysql.jdbc.Driver';
+dburl = ['jdbc:mysql://localhost:3306/' dbname];
+conn = database(dbname, username, password, driver, dburl);
+%查询 myguests 表
+curs = exec(conn, 'select * from init_tbl');
+curs = fetch(curs);
+data = curs.Data
+%取值
+id = data(1,3)
+%把元胞转化为矩阵
+ress = cell2mat(id)
