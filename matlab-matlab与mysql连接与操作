@@ -8,7 +8,13 @@ https://blog.csdn.net/weixin_41831619/article/details/79914307
 
 maltab中用命令行连接数据库代码
 https://www.cnblogs.com/hEllOwOrlD2017/p/6936830.html
-常用的SQL语句
-https://blog.csdn.net/Sebastien23/article/details/74502863
-直接在代码里面写
+matlab中的代码
 https://blog.csdn.net/vinegar93/article/details/53928326
+Matlab连接MySQL，附常用SQL语句
+https://blog.csdn.net/Sebastien23/article/details/74502863
+
+在cmd中输入mysql————mysql -uroot -p
+https://blog.csdn.net/eddy23513/article/details/81205476
+
+MySQL基础操作
+https://blog.csdn.net/qq_27648991/article/details/80412395
